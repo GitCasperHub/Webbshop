@@ -8,4 +8,16 @@
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
-TEST
+
+@foreach (var game in Model.Games)
+{
+    <div class="card mx-auto" style="width: 18rem;">
+        <img class="card-img-top img-thumbnail " src="@game.ImageURL" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title ">@game.Name</h5>
+
+        </div>
+    </div>
+
+    
+}
