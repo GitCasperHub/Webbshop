@@ -179,7 +179,6 @@ namespace Webbshop.Data
                 // Genre - ReleaseDate - Studio - CriticScore - ImageURL (Länk)
                 
                 NewGame("Spyro the dragon", 100, 3, "Lite text om spelet", 10, "action", "25/3/2002", "Activision", 9, "https://upload.wikimedia.org/wikipedia/en/5/53/Spyro_the_Dragon.jpg");
-
             }
 
             return Games;
