@@ -119,17 +119,57 @@ namespace Webbshop.Data
                         CriticScore = 9.5,
                         ImageURL = "https://upload.wikimedia.org/wikipedia/en/9/94/Transformers_-_The_Game_Coverart.png"
 
-                    }
+                    },
+                      new Game()
+                      {
+                          Name = "AGrand Theft Auto V",
+                          Price = 0,
+                          AgeRestriction = 0,
+                          Platform = new List<string>()
+                          {
+
+                          },
+                          Description = "",
+                          Stock = 0,
+                          Genre = "",
+                          ReleaseDate = "",
+                          Studio = "",
+                          CriticScore = 0.0,
+                          ImageURL = "",
+                         
+
+                      },
+                        new Game()
+                      {
+                          Name = "",
+                          Price = 0,
+                          AgeRestriction = 0,
+                          Platform = new List<string>()
+                          {
+
+                          },
+                          Description = "",
+                          Stock = 0,
+                          Genre = "",
+                          ReleaseDate = "",
+                          Studio = "",
+                          CriticScore = 0.0,
+                          ImageURL = "",
+
+
+                      }
 
 
 
                 };
 
+                //För att använda NewGame behövs följande inparametrar:
+                // Name - Price - AgeRestriction - Description - Stock 
+                // Genre - ReleaseDate - Studio - CriticScore - ImageURL (Länk)
+                
                 NewGame("Spyro the dragon", 100, 3, "Lite text om spelet", 10, "action", "25/3/2002", "Activision", 9, "https://upload.wikimedia.org/wikipedia/en/5/53/Spyro_the_Dragon.jpg");
 
             }
-
-
 
             return Games;
         } 
