@@ -80,7 +80,8 @@ namespace Webbshop.Data
                         {
                             "Playstation 4 & 5",
                             "PC",
-                            "Xbox One"                         
+                            "Xbox One",
+                            "Xbox Series X/S"
                         },
                         Description = "The award-winning Call of Duty® series returns with Call of Duty®: Vanguard," +
                         " in which players will experience influential battles of World War II as they fight for " +
@@ -97,7 +98,7 @@ namespace Webbshop.Data
                       new Game()
                     {
                         Name = "Transformers: The Game ",
-                        Price = 9999,
+                        Price = 199,
                         AgeRestriction = 6,
                         Platform = new List<string>()
                         {
@@ -123,38 +124,48 @@ namespace Webbshop.Data
                       new Game()
                       {
                           Name = "Grand Theft Auto V",
-                          Price = 199,
-                          AgeRestriction = 0,
+                          Price = 100,
+                          AgeRestriction = 17,
                           Platform = new List<string>()
                           {
-                              
+                            "Playstation 3, 4 & 5",
+                            "PC",
+                            "Xbox 360",
+                            "Xbox One",
+                            
                           },
-                          Description = "",
-                          Stock = 0,
-                          Genre = "",
-                          ReleaseDate = "",
-                          Studio = "",
-                          CriticScore = 0.0,
-                          ImageURL = "",
+                          Description = "Grand Theft Auto V is an action-adventure game played from either a third-person or first-person perspective. " +
+                          "Players complete missions—linear scenarios with set objectives—to progress through the story. " +
+                          "Outside of the missions, players may freely roam the open world.",
+                          Stock = 15,
+                          Genre = "Action-Adventure, First/Third-Person Shooter & non-linear game",
+                          ReleaseDate = "17/9/2013",
+                          Studio = "Rockstar Games & Rockstar North",
+                          CriticScore = 9.5,
+                          ImageURL = "https://cdn-products.eneba.com/resized-products/t0zqmqhdcxppyol3mtlg_350x200_1x-0.jpg",
                          
 
                       },
                         new Game()
                       {
-                          Name = "",
-                          Price = 0,
-                          AgeRestriction = 0,
+                          Name = "Star Wars: Battlefront II Classic",
+                          Price = 99,
+                          AgeRestriction = 12,
                           Platform = new List<string>()
                           {
-
+                              "Playstation Portable",
+                              "Playstation 2",
+                              "Xbox",
+                              "PC"
                           },
-                          Description = "",
-                          Stock = 0,
-                          Genre = "",
-                          ReleaseDate = "",
-                          Studio = "",
-                          CriticScore = 0.0,
-                          ImageURL = "",
+                          Description = "Join the rise of Darth Vader’s elite 501st Legion of Stormtroopers as you fight through an all new story-based saga " +
+                          "where every action you take impacts the battlefront and, ultimately, the fate of the Star Wars galaxy.",
+                          Stock = 7,
+                          Genre = "Third-Person Shooter",
+                          ReleaseDate = "31/10/2005",
+                          Studio = "Pandemic Studios",
+                          CriticScore = 9.7,
+                          ImageURL = "https://img.g2a.com/323x433/1x1x0/star-wars-battlefront-2-classic-2005-steam-key-europe/59ba5d40ae653a591a391d34",
 
 
                       }

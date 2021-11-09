@@ -5,17 +5,18 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Welcome to EC-Shop</h1>
+    <img src="https://t4.ftcdn.net/jpg/03/20/69/93/360_F_320699362_M758ZpSkReSsz3sMxJS6FeZ3eSyMPspc.jpg"/>
 </div>
 
 @foreach (var game in Model.Games)
 {
-    <div class="card mx-auto" style="width: 18rem;">
+    <div class="card mx-auto row" style="width: 18rem;">
         <img class="card-img-top img-thumbnail " src="@game.ImageURL" alt="Card image cap">
         <div class="card-body">
-            <h5 class="card-title ">@game.Name</h5>
-
+            <h4 class="card-title ">@game.Name</h4>
+            <p>@game.Description</p>
+            <h5> Pris: @game.Price Kr</h5>
         </div>
     </div>
 
