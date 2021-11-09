@@ -122,12 +122,12 @@ namespace Webbshop.Data
                     },
                       new Game()
                       {
-                          Name = "AGrand Theft Auto V",
-                          Price = 0,
+                          Name = "Grand Theft Auto V",
+                          Price = 199,
                           AgeRestriction = 0,
                           Platform = new List<string>()
                           {
-
+                              
                           },
                           Description = "",
                           Stock = 0,
