@@ -14,9 +14,8 @@ namespace Webbshop.Models
        // {
             
        // }
-
-        public int Price { get; set; }
         public string Name { get; set; }
+        public int Price { get; set; }
         public int AgeRestriction { get; set; }
         public List<string> Platform { get; set; }
         public string Description { get; set; }
