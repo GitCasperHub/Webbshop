@@ -6,10 +6,15 @@
 <form method="post">
 
     <input type="text" asp-for="@Model.Name" placeholder="Namn" />
-    <input type="text" asp-for="@Model.Price" placeholder="Pris" />
-    <input type="text" asp-for="@Model.AgeRestriction" placeholder="Åldersgräns" />
+    Pris(kr) <input type="number" asp-for="@Model.Price" placeholder="Pris" />
+    Aldersgräns <input type="text" asp-for="@Model.AgeRestriction" placeholder="Åldersgräns" />
     <input type="text" asp-for="@Model.Description" placeholder="Beskrivning" />
     <input type="text" asp-for="@Model.Stock" placeholder="Lagerstatus" />
+    <input type="text" asp-for="@Model.Genre" placeholder="Genre" />
+    <input type="text" asp-for="@Model.ReleaseDate" placeholder="Releasedatum" />
+    <input type="text" asp-for="@Model.Studio" placeholder="Studio" />
+    <input type="text" asp-for="@Model.CriticScore" placeholder="Betyg" />
+    <input type="text" asp-for="@Model.ImageURL" placeholder="Omslagsbild (URL)" />
     <button class="btn success" type="submit">Lägg till</button>
 
 </form>

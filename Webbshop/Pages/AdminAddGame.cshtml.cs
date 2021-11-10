@@ -12,7 +12,6 @@ namespace Webbshop.Pages
     [BindProperties]
     public class AdminAddGameModel : PageModel
     {
-
         public string Name { get; set; }
         public int Price { get; set; }
         public int AgeRestriction { get; set; }
