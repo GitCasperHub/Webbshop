@@ -12,10 +12,31 @@ namespace Webbshop.Pages
 {
     public class ShowConsolesModel : PageModel
     {
-        public List<GameConsole> Consoles = ConsoleManager.GetGameConsoles();
+        public List<GameConsole> consoles = ConsoleManager.GetGameConsoles();
+       
+
+        [BindProperty(SupportsGet = true)]
+        public string Sort { get; set; }
         public void OnGet()
         {
-            Consoles = Consoles.OrderBy(gameConsole => gameConsole.ConsoleName).ToList();
+
+            consoles = consoles.OrderBy(gameConsole => gameConsole.ConsoleName).ToList();
+
+            if(Sort == "Price")
+            {
+                consoles = consoles.OrderBy(gameConsole => gameConsole.ConsolePrice).ToList();
+            }
+            else if (Sort == "A2Z")
+            {
+                consoles = consoles.OrderBy(gameConsole => gameConsole.ConsoleName).ToList();
+            }
+            else if (Sort == "Z2A")
+            {
+                consoles = consoles.OrderByDescending(gameConsole => gameConsole.ConsoleName).ToList();
+            }
+
+
         }
+       
     }
 }

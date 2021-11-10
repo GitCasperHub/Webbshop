@@ -9,7 +9,7 @@ namespace Webbshop.Data
     public class GameManager
     {
 
-
+        public static List<Game> Games { get; set; }
 
         public static void NewGame(string name, int price, int ageRestriciton, string description, int stock,
             string genre, string releaseDate, string studio, double critScore, string imgURL)
@@ -29,14 +29,14 @@ namespace Webbshop.Data
             game.CriticScore = critScore;
             game.ImageURL = imgURL;
 
-
+            Games = GetGames(); //Hämtar alla spel i listan
             Games.Add(game); //Lägger till spel i lista
 
         }
 
 
 
-       public static List<Game> Games { get; set; }
+      
 
         public static List<Game> GetGames()
         {

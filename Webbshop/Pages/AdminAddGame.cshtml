@@ -1,12 +1,16 @@
 ﻿@page
-@model Webbshop.Models.Game
+@model AdminAddGameModel
 @{
 }
 
 <form method="post">
-     
-    <input type="text" asp-for="@Model.Name" placeholder="Namn:" /> 
+
+    <input type="text" asp-for="@Model.Name" placeholder="Namn" />
+    <input type="text" asp-for="@Model.Price" placeholder="Pris" />
+    <input type="text" asp-for="@Model.AgeRestriction" placeholder="Åldersgräns" />
+    <input type="text" asp-for="@Model.Description" placeholder="Beskrivning" />
+    <input type="text" asp-for="@Model.Stock" placeholder="Lagerstatus" />
+    <button class="btn success" type="submit">Lägg till</button>
 
 </form>
 
-<button class="btn success" type="submit">Lägg till</button>
