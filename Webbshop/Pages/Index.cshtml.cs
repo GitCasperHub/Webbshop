@@ -26,12 +26,12 @@ namespace Webbshop.Pages
         public double CriticScore { get; set; }
         public string ImageURL { get; set; }
 
-        public List<Game> Games = GameManager.GetGames();
+        
 
         public void OnGet()
         {
-            Games = Games.OrderBy(game => game.Name).ToList();
-            //Games = Games.OrderBy(game => game.ImageURL).ToList();
+            
+           
         }
 
         public void OnPost()

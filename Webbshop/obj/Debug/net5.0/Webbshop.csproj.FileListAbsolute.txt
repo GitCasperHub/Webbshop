@@ -1071,3 +1071,5 @@ C:\Users\efrai\Desktop\Skola\Inlämningsuppgift\Projekt\Webbshop\Webbshop\obj\De
 C:\Users\efrai\Desktop\Skola\Inlämningsuppgift\Projekt\Webbshop\Webbshop\obj\Debug\net5.0\ref\Webbshop.dll
 C:\Users\efrai\Desktop\Skola\Inlämningsuppgift\Projekt\Webbshop\Webbshop\obj\Debug\net5.0\Webbshop.pdb
 C:\Users\efrai\Desktop\Skola\Inlämningsuppgift\Projekt\Webbshop\Webbshop\obj\Debug\net5.0\Webbshop.genruntimeconfig.cache
+C:\Users\gumsa\OneDrive\Skrivbord\BigProject\Webbshop\Webbshop\obj\Debug\net5.0\Razor\Pages\ShowGames.cshtml.g.cs
+C:\Users\gumsa\OneDrive\Skrivbord\BigProject\Webbshop\Webbshop\obj\Debug\net5.0\Razor\Pages\ShowConsoles.cshtml.g.cs

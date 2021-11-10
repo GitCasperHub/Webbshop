@@ -5,15 +5,15 @@
 }
 
 
-<form method="post">
 
-    <input type="text" asp-for="@Model.Name" placeholder="Battlefield 4" /> @*Den tar fel Name, vi vill ta name från Game model klasen*@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" asp-page="/ShowGames">Games</a>
+    <a class="navbar-brand" asp-page="/ShowConsoles">Consoles</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+</nav>
 
-</form>
-
-<button class="btn success" type="submit">Lägg till</button>
-
-@* TEST, hela övre biten kod skall igentligen ligga inne på AdminAddGame pagen *@
 
 
 <div class="text-center">
@@ -24,19 +24,16 @@
 
 
 
-@foreach (var game in Model.Games)
-{
-    <div class="card mx-auto row" style="width: 18rem;">
-        <img class="card-img-top img-thumbnail " src="@game.ImageURL" alt="Card image cap">
-        <div class="card-body">
-            <h4 class="card-title ">@game.Name</h4>
-            <p>@game.Description</p>
-            <h5> Pris: @game.Price Kr</h5>
-        </div>
-    </div>
+    <form method="post">
 
+        <input type="text" asp-for="@Model.Name" placeholder="Battlefield 4" /> @*Den tar fel Name, vi vill ta name från Game model klasen*@
 
-}
-<from method-"post">
-    <input type="text" asp-for="@Model.Name" placegolder="Name" />
-</from>
+    </form>
+
+    <button class="btn success" type="submit">Lägg till</button>
+
+    @* TEST, hela övre biten kod skall igentligen ligga inne på AdminAddGame pagen *@
+
+    <from method-"post">
+        <input type="text" asp-for="@Model.Name" placegolder="Name" />
+    </from>

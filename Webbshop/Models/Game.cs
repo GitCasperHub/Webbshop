@@ -7,13 +7,10 @@ using System.Threading.Tasks;
 namespace Webbshop.Models
 {
 
-    //Properties som används över hela programmet
+    //Properties som används för Game & GameManager
     public class Game
     {
-       //public void Game
-       // {
-            
-       // }
+       
         public string Name { get; set; }
         public int Price { get; set; }
         public int AgeRestriction { get; set; }
