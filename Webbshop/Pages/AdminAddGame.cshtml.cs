@@ -12,6 +12,10 @@ namespace Webbshop.Pages
     [BindProperties]
     public class AdminAddGameModel : PageModel
     {
+
+        public bool AddToPendingList { get; set; } = false;
+        public bool MergeLists { get; set; } = false;
+
         public string Name { get; set; }
         public int Price { get; set; }
         public int AgeRestriction { get; set; }
@@ -29,11 +33,22 @@ namespace Webbshop.Pages
         {
         }
 
-        public void OnPost()
+        public void OnPost(bool addToPendingList, bool mergeLists)
         {
-            Data.GameManager.NewGame(Name, Price, AgeRestriction, Platform, Description, Stock, Genre, ReleaseDate, Studio, CriticScore, ImageURL);
-            Data.GameManager.GetGames();
-        }
+            AddToPendingList = addToPendingList;
+            MergeLists = mergeLists;
 
+            if(AddToPendingList)
+            {
+                Data.GameManager.NewGame(Name, Price, AgeRestriction, Platform, Description, Stock, Genre, ReleaseDate, Studio, CriticScore, ImageURL);
+                AddToPendingList = false;
+            }
+            if (MergeLists)
+            {
+                Data.GameManager.AddNewGameList();
+                Data.GameManager.GetGames();
+                MergeLists = false;
+            }
+        }
     }
 }

@@ -10,6 +10,7 @@ namespace Webbshop.Data
     {
 
         public static List<Game> Games { get; set; }
+        public static List<Game> AddedGames { get; set; }
 
         public static void NewGame(string name, double price, int ageRestriciton, string platform, string description, int stock,
             string genre, string releaseDate, string studio, double critScore, string imgURL)
@@ -29,12 +30,18 @@ namespace Webbshop.Data
             game.CriticScore = critScore;
             game.ImageURL = imgURL;
 
-            Games = GetGames(); //Hämtar alla spel i listan
-            Games.Add(game); //Lägger till spel i lista
+            Games = GetGames(); //Hämtar alla standardspel i listan
+            AddedGames.Add(game); //Lägger till spel i lista 
 
         }
 
-
+        public static void AddNewGameList()
+        {
+            foreach (var addedGame in AddedGames)
+            {
+                Games.Add(addedGame); //Lägger till spel i lista
+            }
+        }
 
       
 
