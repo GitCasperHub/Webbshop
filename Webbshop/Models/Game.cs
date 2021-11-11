@@ -12,9 +12,9 @@ namespace Webbshop.Models
     {
        
         public string Name { get; set; }
-        public int Price { get; set; }
+        public double Price { get; set; }
         public int AgeRestriction { get; set; }
-        public List<string> Platform { get; set; }
+        public string Platform { get; set; }
         public string Description { get; set; }
         public int Stock { get; set; }
         public bool InStock { get; set; }
