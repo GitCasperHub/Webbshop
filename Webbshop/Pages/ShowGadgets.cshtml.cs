@@ -10,28 +10,32 @@ using Webbshop.Data;
 
 namespace Webbshop.Pages
 {
-    public class ShowGamesModel : PageModel
+    public class ShowGadgetsModel : PageModel
     {
-        public List<Game> Games = GameManager.GetGames();
+
+        public List<Gadget> gadgets = GadgetManager.GetGadgets();
 
         [BindProperty(SupportsGet = true)]
         public string Sort { get; set; }
+
         public void OnGet()
         {
-            Games = Games.OrderBy(game => game.Name).ToList();
+
+            gadgets = gadgets.OrderBy(Gadget => Gadget.GadgetName).ToList();
 
             if (Sort == "Price")
             {
-                Games = Games.OrderBy(game => game.Price).ToList();
+                gadgets = gadgets.OrderBy(Gadget => Gadget.GadgetPrice).ToList();
             }
             else if (Sort == "A2Z")
             {
-                Games = Games.OrderBy(game => game.Name).ToList();
+                gadgets = gadgets.OrderBy(Gadget => Gadget.GadgetName).ToList();
             }
             else if (Sort == "Z2A")
             {
-                Games = Games.OrderByDescending(game => game.Name).ToList();
+                gadgets = gadgets.OrderByDescending(Gadget => Gadget.GadgetName).ToList();
             }
+
 
         }
     }
