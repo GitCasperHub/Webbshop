@@ -38,7 +38,7 @@ namespace Webbshop.Pages
             AddToPendingList = addToPendingList;
             MergeLists = mergeLists;
 
-            if(AddToPendingList)
+            if (AddToPendingList)
             {
                 Data.GameManager.NewGame(Name, Price, AgeRestriction, Platform, Description, Stock, Genre, ReleaseDate, Studio, CriticScore, ImageURL);
                 AddToPendingList = false;

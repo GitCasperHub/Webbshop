@@ -30,8 +30,9 @@ namespace Webbshop.Data
             game.CriticScore = critScore;
             game.ImageURL = imgURL;
 
-            Games = GetGames(); //Hämtar alla standardspel i listan
-            AddedGames.Add(game); //Lägger till spel i lista 
+            AddedGames = GetGames();
+            //Games = GetGames(); //Hämtar alla standardspel i listan
+            AddedGames.Add(game); //Lägger till spel i lista
 
         }
 
