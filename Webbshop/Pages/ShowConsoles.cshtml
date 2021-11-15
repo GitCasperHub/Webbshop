@@ -1,0 +1,48 @@
+﻿@page
+@model Webbshop.Pages.ShowConsolesModel
+@{
+}
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" asp-page="/ShowGames">Games</a>
+    <a class="navbar-brand" asp-page="/ShowConsoles">Consoles</a>
+    <a class="navbar-brand" asp-page="/ShowGadgets">Gadgets</a>
+    <a class="navbar-brand text-right" asp-page="/AdminAddGame">Admin</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+</nav>
+
+<h3 class="text-center">Here is a list of different consoles we're selling'</h3>
+
+
+
+<div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Sortera Efter:
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="ShowConsoles?Sort=Price">Price</a>
+        <a class="dropdown-item" href="ShowConsoles?Sort=A2Z">Bokstavsordning A - Z</a>
+        <a class="dropdown-item" href="ShowConsoles?Sort=Z2A">Bokstavsordning Z - A</a>
+    </div>
+</div>
+
+
+    @foreach(var gameConsole in Model.consoles)
+    {
+    <div class="card mx-auto row" style="width: 18rem;">
+        <img class="card-img-top img-thumbnail " src="@gameConsole.ConsoleImageURL" alt="Card image cap">
+        <div class="card-body">
+            <h4 class="card-title ">@gameConsole.ConsoleName</h4>
+            <p>@gameConsole.ConsoleDescription</p>
+            <h5> Pris: @gameConsole.ConsolePrice Kr</h5>
+            <div></div>
+        </div>
+    </div>
+    }
+
+
+
+
+           

@@ -13,12 +13,16 @@ namespace Webbshop.Pages
     public class IndexModel : PageModel
     {
 
-       public List<Game> Games = GameManager.GetGames();
-
         public void OnGet()
         {
-            Games = Games.OrderBy(game => game.Name).ToList();
-            //Games = Games.OrderBy(game => game.ImageURL).ToList();
+            
+           
         }
+
+        public void OnPost()
+        {
+
+        }
+
     }
 }
