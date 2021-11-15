@@ -13,6 +13,8 @@ namespace Webbshop.Pages
     public class AdminAddGameModel : PageModel
     {
 
+        public List<Game> PendingGames = GameManager.AddedGames; 
+
         public bool AddToPendingList { get; set; } = false;
         public bool MergeLists { get; set; } = false;
 
@@ -48,7 +50,6 @@ namespace Webbshop.Pages
             {
                 // Slår ihop pending listan 
                 Data.GameManager.AddNewGameList();
-                Data.GameManager.GetGames();
                 mergeLists = false;
             }
         }
