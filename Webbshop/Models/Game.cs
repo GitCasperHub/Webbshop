@@ -6,20 +6,23 @@ using System.Threading.Tasks;
 
 namespace Webbshop.Models
 {
+
+    //Properties som används för Game & GameManager
     public class Game
     {
-        public int Price { get; set; }
+       
         public string Name { get; set; }
+        public double Price { get; set; }
         public int AgeRestriction { get; set; }
-        public List<string> Platform { get; set; }
+        public string Platform { get; set; }
         public string Description { get; set; }
         public int Stock { get; set; }
         public bool InStock { get; set; }
         public string Genre { get; set; }
-        public int ReleaseDate { get; set; }
-        public string Stduio { get; set; }
-        public string CriticScore { get; set; }
-
+        public string ReleaseDate { get; set; }
+        public string Studio { get; set; }
+        public double CriticScore { get; set; }
+        public string ImageURL { get; set; }
 
     }
    
