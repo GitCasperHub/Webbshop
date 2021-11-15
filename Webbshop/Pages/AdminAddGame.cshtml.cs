@@ -35,19 +35,21 @@ namespace Webbshop.Pages
 
         public void OnPost(bool addToPendingList, bool mergeLists)
         {
-            AddToPendingList = addToPendingList;
             MergeLists = mergeLists;
+            AddToPendingList = addToPendingList;
 
-            if (AddToPendingList)
+            if (addToPendingList)
             {
+                //Lägger till spel i pending listan
                 Data.GameManager.NewGame(Name, Price, AgeRestriction, Platform, Description, Stock, Genre, ReleaseDate, Studio, CriticScore, ImageURL);
-                AddToPendingList = false;
+                addToPendingList  = false;
             }
-            if (MergeLists)
+            if(mergeLists)
             {
+                // Slår ihop pending listan 
                 Data.GameManager.AddNewGameList();
                 Data.GameManager.GetGames();
-                MergeLists = false;
+                mergeLists = false;
             }
         }
     }
