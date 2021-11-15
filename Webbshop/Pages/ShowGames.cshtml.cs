@@ -13,8 +13,8 @@ namespace Webbshop.Pages
     public class ShowGamesModel : PageModel
     {
         public List<Game> Games = GameManager.GetGames();
-        public List<GameConsole> consoles = ConsoleManager.GetGameConsoles();
-        public List<Gadget> gadgets = GadgetManager.GetGadgets();
+
+        public int Id { get; set; }
 
         [BindProperty]
         public string Search { get; set; }
@@ -50,33 +50,36 @@ namespace Webbshop.Pages
 
         }
 
-        public void OnPost()
+        public void OnPost(int id)
         {
-            string searchWord = Search.ToLower();
-
+            CartManager.AddToCart(id);
+            
+            
+             
+            
 
             //Search Bar sökningar
-            if (searchWord == "playstation")
+            if (Search == "playstation")
             {
 
                 Games = Games.Where(game => game.Platform.Contains("Playstation")).ToList();              
             }
-            else if (searchWord == "xbox one")
+            else if (Search == "xbox one")
             {
                 Games = Games.Where(game => game.Platform.Contains("Xbox One")).ToList();
                 
             }
-            else if (searchWord == "electronic arts")
+            else if (Search == "electronic arts")
             {
                 Games = Games.Where(game => game.Studio.Contains("Electronic Arts")).ToList();
 
             }
-            else if (searchWord == "activision")
+            else if (Search == "activision")
             {
                 Games = Games.Where(game => game.Studio.Contains("Activision")).ToList();
               
             }
-            else if (searchWord == "wii")
+            else if (Search == "wii")
             {
                 Games = Games.Where(game => game.Platform.Contains("Wii")).ToList();
 

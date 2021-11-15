@@ -33,9 +33,9 @@
 @foreach (var gadget in Model.gadgets)
     {
         <div class="card mx-auto row" style="width: 18rem;">
-            <img class="card-img-top img-thumbnail " src="@gadget.GadgetImageURL" alt="Card image cap">
+            <img class="card-img-top img-thumbnail " src="@gadget.ImageURL" alt="Card image cap">
             <div class="card-body">
-                <h4 class="card-title ">@gadget.GadgetName</h4>
+                <h4 class="card-title ">@gadget.Name</h4>
                 <p>
                     <a class="btn btn-light" data-toggle="collapse" href="#collapseExample_@i"
                        role="button" aria-expanded="true" aria-controls="collapseExample_@i">
@@ -44,12 +44,13 @@
                 </p>
                 <div class="collapse" id="collapseExample_@i">
                     <div class="card card-body">
-                        <p>@gadget.GadgetDescription</p>
+                        <p>@gadget.Description</p>
                         <p>Platforms: @gadget.GadgetPlatform</p>
                     </div>
                 </div>
-                <h5> Quantity: @gadget.GadgetStock </h5>
-                <h5> Pris: @gadget.GadgetPrice Kr</h5>
+                <h6> Quantity: @gadget.Stock </h6>
+                <h6> Article Number: @gadget.Id</h6>
+                <h5> Pris: @gadget.Price Kr</h5>
                 <button type="button">Add to Cart</button>
             </div>
         </div>

@@ -21,19 +21,19 @@ namespace Webbshop.Pages
         public void OnGet()
         {
 
-            gadgets = gadgets.OrderBy(Gadget => Gadget.GadgetName).ToList();
+            gadgets = gadgets.OrderBy(Gadget => Gadget.Name).ToList();
 
             if (Sort == "Price")
             {
-                gadgets = gadgets.OrderBy(Gadget => Gadget.GadgetPrice).ToList();
+                gadgets = gadgets.OrderBy(Gadget => Gadget.Price).ToList();
             }
             else if (Sort == "A2Z")
             {
-                gadgets = gadgets.OrderBy(Gadget => Gadget.GadgetName).ToList();
+                gadgets = gadgets.OrderBy(Gadget => Gadget.Name).ToList();
             }
             else if (Sort == "Z2A")
             {
-                gadgets = gadgets.OrderByDescending(Gadget => Gadget.GadgetName).ToList();
+                gadgets = gadgets.OrderByDescending(Gadget => Gadget.Name).ToList();
             }
 
 

@@ -25,7 +25,7 @@ namespace Webbshop.Data
 
                     new Game()
                     {
-                        
+                        Id = Math.Abs(Guid.NewGuid().GetHashCode()),
                         Name = "FIFA 22 ",
                         Price = 599,
                         AgeRestriction = 13,
@@ -43,6 +43,7 @@ namespace Webbshop.Data
                     },
                      new Game()
                     {
+                        Id = Math.Abs(Guid.NewGuid().GetHashCode()),
                         Name = "Call of Duty: Vanguard ",
                         Price = 599,
                         AgeRestriction = 13,
@@ -61,6 +62,7 @@ namespace Webbshop.Data
                     },
                       new Game()
                     {
+                        Id = Math.Abs(Guid.NewGuid().GetHashCode()),
                         Name = "Transformers: The Game ",
                         Price = 199,
                         AgeRestriction = 6,
@@ -79,6 +81,7 @@ namespace Webbshop.Data
                     },
                       new Game()
                       {
+                          Id = Math.Abs(Guid.NewGuid().GetHashCode()),
                           Name = "Grand Theft Auto V",
                           Price = 100,
                           AgeRestriction = 17,
@@ -97,6 +100,7 @@ namespace Webbshop.Data
                       },
                         new Game()
                       {
+                          Id = Math.Abs(Guid.NewGuid().GetHashCode()),
                           Name = "Star Wars: Battlefront II Classic",
                           Price = 99,
                           AgeRestriction = 12,
@@ -116,10 +120,6 @@ namespace Webbshop.Data
 
 
                 };
-
-                //För att använda NewGame behövs följande inparametrar:
-                // Name - Price - AgeRestriction - Description - Stock 
-                // Genre - ReleaseDate - Studio - CriticScore - ImageURL (Länk)
                 
                 //NewGame("Spyro", 100, 3, "Lite text om spelet", 10, "action", "25/3/2002", "Activision", 9, "https://upload.wikimedia.org/wikipedia/en/5/53/Spyro_the_Dragon.jpg");
             }
@@ -135,6 +135,7 @@ namespace Webbshop.Data
 
             Game game = new Game(); //Skapar nytt spelobjekt med nedanstående attribut
 
+            game.Id = Guid.NewGuid().GetHashCode();
             game.Name = name;
             game.Price = price;
             game.AgeRestriction = ageRestriciton;
