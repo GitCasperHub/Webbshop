@@ -8,6 +8,7 @@ namespace Webbshop.Models
     //Properties för ConsoleManager & GameConsole
     public class GameConsole
     {
+       
         public string ConsoleName { get; set; }
         public int ConsolePrice { get; set; }
         public string ConsoleDeveloper { get; set; }

@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Webbshop.Data
 {
-    public class GameManager
+    public static class GameManager
     {
 
         public static List<Game> Games { get; set; }
-        public static List<Game> AddedGames { get; set; }
+        public static List<Game> AddedGames { get; set; } = new List<Game>();
 
         public static void NewGame(string name, double price, int ageRestriciton, string platform, string description, int stock,
             string genre, string releaseDate, string studio, double critScore, string imgURL)
@@ -30,8 +30,6 @@ namespace Webbshop.Data
             game.CriticScore = critScore;
             game.ImageURL = imgURL;
 
-            AddedGames = GetGames();
-            //Games = GetGames(); //Hämtar alla standardspel i listan
             AddedGames.Add(game); //Lägger till spel i lista
 
         }
@@ -57,10 +55,11 @@ namespace Webbshop.Data
 
                     new Game()
                     {
+                        
                         Name = "FIFA 22 ",
                         Price = 599,
                         AgeRestriction = 13,
-                        Platform = "Playstation 4 & 5, PC, Xbox One, Nintendo Switch",
+                        Platform = "Playstation 4 & 5, PC, Xbox One, Xbox Series X, Nintendo Switch",
                         Description = "FIFA 22 is an association football simulation video game published by " +
                         "Electronic Arts as part of the FIFA series. It is the 29th installment in the FIFA series ",
                         Stock = 10,
@@ -77,7 +76,7 @@ namespace Webbshop.Data
                         Name = "Call of Duty: Vanguard ",
                         Price = 599,
                         AgeRestriction = 13,
-                        Platform = "Playstation 4 & 5, PC, Xbox One, Xbox Series X/S",
+                        Platform = "Playstation 4 & 5, PC, Xbox One, Xbox Series X",
                         Description = "The award-winning Call of Duty® series returns with Call of Duty®: Vanguard," +
                         " in which players will experience influential battles of World War II as they fight for " +
                         "victory across the Eastern and Western Fronts of Europe, the Pacific, and North Africa. ",

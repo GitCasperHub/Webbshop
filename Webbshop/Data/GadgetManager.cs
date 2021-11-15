@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Webbshop.Data
 {
-    public class GadgetManager
+    public static class GadgetManager
     {
         public static List<Gadget> Gadgets { get; set; }
 
@@ -64,7 +64,7 @@ namespace Webbshop.Data
                         GadgetName = "Branch Outlet 6-way",
                         GadgetPrice = 99,
                         GadgetStock = 25,
-                        GadgetPlatform = "",
+                        GadgetPlatform = "Works for all Platforms",
                         GadgetImageURL = "https://www.netonnet.se/GetFile/ProductImagePrimary/hem-fritid/el-batterier/grenuttag/on-extension-lead-6-way-grounded-with-switch-1-5m(1003909)_325892_1_Normal_Large.jpg",
                         GadgetDescription = "Branch Outlet with 6-way extension and ON/OFF switch"
 

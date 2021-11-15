@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Webbshop.Data
 {
-    public class ConsoleManager
+    public static class ConsoleManager
     {
 
 
