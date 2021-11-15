@@ -27,21 +27,27 @@
     <input type="text" asp-for="@Model.CriticScore" placeholder="Betyg" />
     <input type="text" asp-for="@Model.ImageURL" placeholder="Omslagsbild (URL)" />
 
-    <button class="btn primary" type="submit" asp-route-addToPendingList="true">Lägg till i pending lista</button>
+    <div>
+        <button class="btn primary" type="submit" asp-route-addToPendingList="true">Lägg till i pending lista</button>
+    </div>
 
-    <button class="btn primary" type="submit" asp-route-mergeList="true">Slå ihop listor</button>
+    <div>
+        <button class="btn primary" type="submit" asp-route-mergeLists="true">Slå ihop listor</button>
+    </div>
+
 
 </form>
 
 
-    @*foreach (var AddedGames in Model.AdminAddGame){
+@foreach (var AddedGame in Model.PendingGames)
+{
 
         <div class="card mx-auto row" style="width: 18rem;">
-                <img class="card-img-top img-thumbnail " src="@game.ImageURL" alt="Card image cap">
+                <img class="card-img-top img-thumbnail " src="@AddedGame.ImageURL" alt="Card image cap">
                 <div class="card-body">
-                    <h4 class="card-title ">@game.Name</h4>
-                    <p>@game.Description</p>
-                    <h5> Pris: @game.Price Kr</h5>
+                    <h4 class="card-title ">@AddedGame.Name</h4>
+                    <p>@AddedGame.Description</p>
+                    <h5> Pris: @AddedGame.Price  Kr</h5>
                 </div>
             </div>
-        }*@
+        }

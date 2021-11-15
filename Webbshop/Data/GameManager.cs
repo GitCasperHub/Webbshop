@@ -9,38 +9,8 @@ namespace Webbshop.Data
     public static class GameManager
     {
 
-        public static List<Game> Games { get; set; }
+        public static List<Game> Games { get; set; } = new List<Game>();
         public static List<Game> AddedGames { get; set; } = new List<Game>();
-
-        public static void NewGame(string name, double price, int ageRestriciton, string platform, string description, int stock,
-            string genre, string releaseDate, string studio, double critScore, string imgURL)
-        {
-
-            Game game = new Game(); //Skapar nytt spelobjekt med nedanstående attribut
-
-            game.Name = name;
-            game.Price = price;
-            game.AgeRestriction = ageRestriciton;
-            game.Platform = platform;
-            game.Description = description;
-            game.Stock = stock;
-            game.Genre = genre;
-            game.ReleaseDate = releaseDate;
-            game.Studio = studio;
-            game.CriticScore = critScore;
-            game.ImageURL = imgURL;
-
-            AddedGames.Add(game); //Lägger till spel i lista
-
-        }
-
-        public static void AddNewGameList()
-        {
-            foreach (var addedGame in AddedGames)
-            {
-                Games.Add(addedGame); //Lägger till spel i lista
-            }
-        }
 
       
 
@@ -155,11 +125,41 @@ namespace Webbshop.Data
             }
 
             return Games;
-        } 
-        
+        }
 
 
 
+        public static void NewGame(string name, double price, int ageRestriciton, string platform, string description, int stock,
+        string genre, string releaseDate, string studio, double critScore, string imgURL)
+        {
+
+            Game game = new Game(); //Skapar nytt spelobjekt med nedanstående attribut
+
+            game.Name = name;
+            game.Price = price;
+            game.AgeRestriction = ageRestriciton;
+            game.Platform = platform;
+            game.Description = description;
+            game.Stock = stock;
+            game.Genre = genre;
+            game.ReleaseDate = releaseDate;
+            game.Studio = studio;
+            game.CriticScore = critScore;
+            game.ImageURL = imgURL;
+
+            AddedGames.Add(game); //Lägger till spel i lista
+
+        }
+
+        public static void AddNewGameList()
+        {
+            GetGames();
+
+            foreach (var addedGame in AddedGames)
+            {
+                Games.Add(addedGame); //Lägger till spel i lista
+            }
+        }
 
 
     }
