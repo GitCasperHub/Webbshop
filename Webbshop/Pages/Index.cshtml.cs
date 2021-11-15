@@ -11,9 +11,10 @@ using Webbshop.Data;
 namespace Webbshop.Pages
 {
     public class IndexModel : PageModel
+
+
     {
-        [BindProperty]
-        public string Search { get; set; }
+     
         public void OnGet()
         {
             
@@ -22,11 +23,7 @@ namespace Webbshop.Pages
 
         public void OnPost()
         {
-            if(Search == "Playstation")
-            {
-
-            }
-
+          
 
 
         }

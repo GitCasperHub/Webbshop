@@ -13,6 +13,14 @@
     </button>
 </nav>
 
+<form method="post">
+    <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search" asp-for="Search">
+        <input type="submit" value="Submit" />
+
+    </div>
+</form>
+
 <h3 class="text-center">Here is a list of different consoles we're selling'</h3>
 
 
@@ -44,7 +52,9 @@
             <div class="collapse" id="collapseExample_@i">
                 <div class="card card-body">
                     <p>@gameConsole.ConsoleDescription</p>
-                    <p>Platforms: @gameConsole.ConsoleDeveloper</p>
+                    <p>Develepor: @gameConsole.ConsoleDeveloper</p>
+                    <p>Release Date: @gameConsole.ConsoleRelease</p>
+
                 </div>
             </div>
             <h5> Quantity: @gameConsole.ConsoleStock</h5>

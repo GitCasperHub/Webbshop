@@ -13,6 +13,11 @@ namespace Webbshop.Pages
     public class ShowGamesModel : PageModel
     {
         public List<Game> Games = GameManager.GetGames();
+        public List<GameConsole> consoles = ConsoleManager.GetGameConsoles();
+        public List<Gadget> gadgets = GadgetManager.GetGadgets();
+
+        [BindProperty]
+        public string Search { get; set; }
 
         [BindProperty(SupportsGet = true)]
 
@@ -41,8 +46,41 @@ namespace Webbshop.Pages
                 Games = Games.OrderByDescending(game => game.Name).ToList();
             }
 
-         
+          
 
+        }
+
+        public void OnPost()
+        {
+            string searchWord = Search.ToLower();
+
+
+            //Search Bar sökningar
+            if (searchWord == "playstation")
+            {
+
+                Games = Games.Where(game => game.Platform.Contains("Playstation")).ToList();              
+            }
+            else if (searchWord == "xbox one")
+            {
+                Games = Games.Where(game => game.Platform.Contains("Xbox One")).ToList();
+                
+            }
+            else if (searchWord == "electronic arts")
+            {
+                Games = Games.Where(game => game.Studio.Contains("Electronic Arts")).ToList();
+
+            }
+            else if (searchWord == "activision")
+            {
+                Games = Games.Where(game => game.Studio.Contains("Activision")).ToList();
+              
+            }
+            else if (searchWord == "wii")
+            {
+                Games = Games.Where(game => game.Platform.Contains("Wii")).ToList();
+
+            }
         }
     }
 }

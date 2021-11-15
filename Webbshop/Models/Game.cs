@@ -10,7 +10,8 @@ namespace Webbshop.Models
     //Properties som används för Game & GameManager
     public class Game
     {
-       
+        
+
         public string Name { get; set; }
         public double Price { get; set; }
         public int AgeRestriction { get; set; }

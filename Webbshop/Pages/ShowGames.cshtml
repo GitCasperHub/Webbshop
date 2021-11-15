@@ -13,6 +13,13 @@
     </button>
 </nav>
 
+<form method="post">
+    <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search" asp-for="Search">
+        <input type="submit" value="Submit" />
+
+    </div>
+</form>
 
 
 <h3 class="text-center">Here are the games currently in stock</h3>
@@ -50,11 +57,16 @@
             <div class="collapse" id="collapseExample_@i">
                 <div class="card card-body">
                     <p>@game.Description</p>
-                    <p>Playable Platforms: @game.Platform</p>
+                    <p>Release Date: @game.ReleaseDate</p>
+                    <p>Game Studio: @game.Studio</p>
+                    <p>Age Restriction: @game.AgeRestriction</p>
+                    <p>Genre: @game.Genre</p>
+                    <p>Critic Score: @game.CriticScore</p>
                 </div>
             </div>
-            <h5> Quantity: @game.Stock </h5>
-            <h5> Pris: @game.Price Kr</h5>
+            <h6> Playable Platforms: @game.Platform</h6>
+            <h6> Quantity: @game.Stock </h6>
+            <h5> Price: @game.Price Kr</h5>
             <button type="button">Add to Cart</button>
         </div>
     </div>

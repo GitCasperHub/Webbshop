@@ -12,8 +12,12 @@ namespace Webbshop.Pages
 {
     public class ShowConsolesModel : PageModel
     {
+        public List<Game> Games = GameManager.GetGames();
         public List<GameConsole> consoles = ConsoleManager.GetGameConsoles();
-       
+        public List<Gadget> gadgets = GadgetManager.GetGadgets();
+
+        [BindProperty]
+        public string Search { get; set; }
 
         [BindProperty(SupportsGet = true)]
         public string Sort { get; set; }
@@ -37,6 +41,23 @@ namespace Webbshop.Pages
 
 
         }
+
+        public void Onpost()
+        {
+            string searchWord = Search.ToLower();
+
+
+            //Search Bar sökningar
+            if (searchWord == "playstation")
+            {
+
+                consoles = consoles.Where(console => console.ConsoleName.Contains("Playstation")).ToList();
+
+            }
+
+
+        }
+
        
     }
 }
