@@ -16,29 +16,46 @@
 
 <form method="post" asp-page-handler="addPending">
     <div>
-
-        <input type="text" asp-for="@Model.Name" placeholder="Namn" />
-    </div>  
-    
-    Pris(kr)
-        <input type="number" asp-for="@Model.Price" placeholder="Pris" />Aldersgräns
+       <input type="text" asp-for="@Model.Name" placeholder="Namn" />
+   </div>  
+    <div>
+        <input type="number" asp-for="@Model.Price" placeholder="Pris" />
+        Pris(kr)
+   </div> 
+    <div>
         <input type="text" asp-for="@Model.AgeRestriction" placeholder="Åldersgräns" />
+        Åldersgräns
+   </div>
+    <div>
         <input type="text" asp-for="@Model.Platform" placeholder="Platform tex. Xbox 360, Playstation 4, Nintendo DS" />
+   </div>
+    <div>
         <input type="text" asp-for="@Model.Description" placeholder="Beskrivning" />
+   </div>
+    <div>
         <input type="text" asp-for="@Model.Stock" placeholder="Lagerstatus" />
+   </div>
+    <div>
         <input type="text" asp-for="@Model.Genre" placeholder="Genre" />
+   </div>
+    <div>
         <input type="text" asp-for="@Model.ReleaseDate" placeholder="Releasedatum" />
+   </div>
+    <div>
         <input class="box-shadow" type="text" asp-for="@Model.Studio" placeholder="Studio" />
+   </div>
+    <div>
         <input type="text" asp-for="@Model.CriticScore" placeholder="Betyg" />
+   </div>
+    <div>
         <input type="text" asp-for="@Model.ImageURL" placeholder="Omslagsbild (URL)" />
+   </div>
+    
+    <div >
+        <button class="btn btn-dark btn-sm" type="submit" asp-route-addToPendingList="true">Lägg till i pending lista</button>
 
-        <div>
-            <button class="btn primary" type="submit" asp-route-addToPendingList="true">Lägg till i pending lista</button>
-        </div>
-
-        <div>
-            <button class="btn primary" type="submit" asp-route-mergeLists="true">Slå ihop listor</button>
-        </div>
+        <button class="btn btn-dark btn-sm" type="submit" asp-route-mergeLists="true">Slå ihop listor</button>
+    </div> 
 
 
 </form>
