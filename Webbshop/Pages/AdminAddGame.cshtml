@@ -14,48 +14,60 @@
     </button>
 </nav>
 
-<form method="post" asp-page-handler="addPending">
+<form method="post">
+
+    <a class="btn btn-danger btn-sm checked" asp-page="/AdminAddGame">Add a Game</a>
+    <a class="btn btn-outline-danger btn-sm checked" asp-page="">Add a Console</a>
+    <a class="btn btn-outline-danger btn-sm checked" asp-page="">Add a Gadget</a>
+    <a class="my-auto btn btn-outline-danger btn-sm checked" asp-page="/SearchProductId">Remove or Change a product</a>
+
+
     <div>
-       <input type="text" asp-for="@Model.Name" placeholder="Namn" />
-   </div>  
+        <h2 class="text">Add a new game</h2>
+    </div>
+
+    <div>
+        <input type="text" asp-for="@Model.Name" placeholder="Namn" />
+    </div>
     <div>
         <input type="number" asp-for="@Model.Price" placeholder="Pris" />
         Pris(kr)
-   </div> 
+    </div>
     <div>
         <input type="text" asp-for="@Model.AgeRestriction" placeholder="Åldersgräns" />
         Åldersgräns
-   </div>
+    </div>
     <div>
         <input type="text" asp-for="@Model.Platform" placeholder="Platform tex. Xbox 360, Playstation 4, Nintendo DS" />
-   </div>
+    </div>
     <div>
         <input type="text" asp-for="@Model.Description" placeholder="Beskrivning" />
-   </div>
+    </div>
     <div>
         <input type="text" asp-for="@Model.Stock" placeholder="Lagerstatus" />
-   </div>
+    </div>
     <div>
         <input type="text" asp-for="@Model.Genre" placeholder="Genre" />
-   </div>
+    </div>
     <div>
         <input type="text" asp-for="@Model.ReleaseDate" placeholder="Releasedatum" />
-   </div>
+    </div>
     <div>
         <input class="box-shadow" type="text" asp-for="@Model.Studio" placeholder="Studio" />
-   </div>
+    </div>
     <div>
         <input type="text" asp-for="@Model.CriticScore" placeholder="Betyg" />
-   </div>
+    </div>
     <div>
         <input type="text" asp-for="@Model.ImageURL" placeholder="Omslagsbild (URL)" />
-   </div>
-    
-    <div >
-        <button class="btn btn-dark btn-sm" type="submit" asp-route-addToPendingList="true">Lägg till i pending lista</button>
+    </div>
 
-        <button class="btn btn-dark btn-sm" type="submit" asp-route-mergeLists="true">Slå ihop listor</button>
-    </div> 
+    <div class="my-5">
+        <button class="btn btn-primary btn-sm" type="submit" asp-route-addToPendingList="true">Lägg till i pending lista</button>
+
+        <button class="btn btn-danger btn-sm" type="submit" asp-route-mergeLists="true">Slå ihop listor</button>
+
+    </div>
 
 
 </form>
@@ -70,7 +82,8 @@
                     <h4 class="card-title ">@AddedGame.Name</h4>
                     <p>@AddedGame.Description</p>
                     <h5> Pris: @AddedGame.Price  Kr</h5>
-                    <button class="btn primary" type="submit" asp-route-mergeLists="true">Ändra</button>
+                    <button class="btn btn-outline-primary btn-sm" type="submit" asp-route-changeGame="true">Ändra</button>
+                    <button class="btn btn-outline-primary btn-sm" type="submit" asp-route-removeFromPending="true">Ta bort</button>
                 </div>
-            </div>
-        }
+        </div>
+}

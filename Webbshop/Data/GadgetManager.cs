@@ -10,6 +10,12 @@ namespace Webbshop.Data
     {
         public static List<Gadget> Gadgets { get; set; }
 
+        private static string GenerateGadgetId()
+        {
+            string id = "GT" + Math.Abs(Guid.NewGuid().GetHashCode());
+            return id;
+        }
+
         public static List<Gadget> GetGadgets()
         {
             if (Gadgets == null || !Gadgets.Any())
@@ -18,7 +24,7 @@ namespace Webbshop.Data
                 {
                     new Gadget()
                     {
-                        Id = Guid.NewGuid().GetHashCode(),
+                        Id = GenerateGadgetId(),
                         Name = "PlayStation 5 Controller",
                         Price = 629,
                         Stock = 10,
@@ -30,7 +36,7 @@ namespace Webbshop.Data
                     },
                      new Gadget()
                     {
-                        Id = Guid.NewGuid().GetHashCode(),
+                        Id = GenerateGadgetId(),
                         Name = "PlayStation 4 Controller",
                         Price = 649,
                         Stock = 13,
@@ -41,7 +47,7 @@ namespace Webbshop.Data
                     },
                       new Gadget()
                     {
-                        Id = Guid.NewGuid().GetHashCode(),
+                        Id = GenerateGadgetId(),
                         Name = "SCUF Xbox Series X Controller",
                         Price = 2000,
                         Stock = 4,
@@ -54,7 +60,7 @@ namespace Webbshop.Data
                     },
                        new Gadget()
                     {
-                        Id = Guid.NewGuid().GetHashCode(),
+                        Id = GenerateGadgetId(),
                         Name = "Xbox One Controller",
                         Price = 550,
                         Stock = 15,
@@ -65,7 +71,7 @@ namespace Webbshop.Data
                     },
                         new Gadget()
                     {
-                        Id = Guid.NewGuid().GetHashCode(),
+                        Id = GenerateGadgetId(),
                         Name = "Branch Outlet 6-way",
                         Price = 99,
                         Stock = 25,

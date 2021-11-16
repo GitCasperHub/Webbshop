@@ -52,7 +52,7 @@ namespace Webbshop.Pages
 
         }
 
-        public void OnPost(int id)
+        public void OnPost(string id)
         {
             
 

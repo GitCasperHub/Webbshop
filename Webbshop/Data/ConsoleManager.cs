@@ -12,6 +12,12 @@ namespace Webbshop.Data
 
         public static List<GameConsole> Consoles { get; set; }
 
+        private static string GenerateConsoleId()
+        {
+            string id = "CE" + Math.Abs(Guid.NewGuid().GetHashCode());
+            return id;
+        }
+
         public static List<GameConsole> GetGameConsoles()
         {
             if (Consoles == null || !Consoles.Any())
@@ -20,7 +26,7 @@ namespace Webbshop.Data
                 {
                     new GameConsole()
                     {
-                        Id = Math.Abs(Guid.NewGuid().GetHashCode()),
+                        Id = GenerateConsoleId(),
                         Name = "Playstation 5",
                         Price = 4999,
                         ConsoleDeveloper = "Sony Interactive Entertainment",
@@ -36,7 +42,7 @@ namespace Webbshop.Data
                     },
                      new GameConsole()
                     {
-                        Id = Guid.NewGuid().GetHashCode(),
+                        Id = GenerateConsoleId(),
                         Name = "Xbox Series X ",
                         Price = 4999,
                         ConsoleDeveloper = "Microsoft",
@@ -51,7 +57,7 @@ namespace Webbshop.Data
                     },
                       new GameConsole()
                     {
-                        Id = Guid.NewGuid().GetHashCode(),
+                        Id = GenerateConsoleId(),
                         Name = "Nintendo Switch",
                         Price = 3299,
                         ConsoleDeveloper = "Nintendo",
@@ -65,7 +71,7 @@ namespace Webbshop.Data
                     },
                        new GameConsole()
                     {
-                        Id = Guid.NewGuid().GetHashCode(),
+                        Id = GenerateConsoleId(),
                         Name = "Xbox One",
                         Price = 4499,
                         ConsoleDeveloper = "Microsoft",
@@ -81,7 +87,7 @@ namespace Webbshop.Data
                     },
                         new GameConsole()
                     {
-                        Id = Guid.NewGuid().GetHashCode(),
+                        Id = GenerateConsoleId(),
                         Name = "Playstation 4",
                         Price = 3349,
                         ConsoleDeveloper = "Sony Computer Entertainment",

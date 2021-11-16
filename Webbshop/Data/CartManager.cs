@@ -35,41 +35,24 @@ namespace Webbshop.Data
             return AllProductsList;
         }
 
-
-        public static void AddToCart(int id)
+        public static void AddToCart(string id)
         {
             List<Product> allProducts = GetAllProducts();
 
-            
 
-            for (int i = allProducts.Count-1; i > 0; i--)
+
+            for (int i = allProducts.Count - 1; i > 0; i--)
             {
                 if (allProducts[i].Id == id)
                 {
-                    CartList.Add( allProducts[i] );
+                    CartList.Add(allProducts[i]);
                     // 1 CoD - 2 Fifa - 3 StarW
                 }
             }
 
 
-
-
-
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-        public static void RemoveFromCart(int removeId)
+        public static void RemoveFromCart(string removeId)
         {
 
             for (int i = CartList.Count - 1; i > 0; i--)
@@ -80,7 +63,5 @@ namespace Webbshop.Data
                 }
             }
         }
-
-
     }
 }
