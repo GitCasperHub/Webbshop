@@ -15,6 +15,9 @@ namespace Webbshop.Pages
 
         public List<Gadget> gadgets = GadgetManager.GetGadgets();
 
+        [BindProperty]
+        public string Search { get; set; }
+
         [BindProperty(SupportsGet = true)]
         public string Sort { get; set; }
 
@@ -36,6 +39,12 @@ namespace Webbshop.Pages
                 gadgets = gadgets.OrderByDescending(Gadget => Gadget.Name).ToList();
             }
 
+
+        }
+       
+        public void OnPost()
+        {
+           
 
         }
     }

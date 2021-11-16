@@ -15,18 +15,16 @@ namespace Webbshop.Pages
 
         public List<Product> CartList = CartManager.CartList;
 
-
-        public void OnGet()
+        public void OnGet(int Id)
         {
-          
+         
             
-
         }
 
         public void OnPost(int removeId)
         {
 
-            CartManager.RemoveFromCart(removeId);
+            //CartManager.RemoveFromCart(removeId);
 
             //CartList = CartList.OrderBy(product => product.Price).ToList();
 

@@ -12,25 +12,28 @@ namespace Webbshop.Pages
 {
     public class ShowGamesModel : PageModel
     {
+       
         public List<Game> Games = GameManager.GetGames();
-
-        
-
+      
+       
         [BindProperty]
         public string Search { get; set; }
-        public string SearchLower { get; set; }
 
         
+
         [BindProperty(SupportsGet = true)]
 
         //Property för Sortering
         public string Sort { get; set; }
        
-        public void OnGet()
+        public void OnGet(int Id)
         {
+           
+
+
+
+
             Games = Games.OrderBy(game => game.Name).ToList();
-
-
 
             //Sortering Via Price
             if (Sort == "Price")
@@ -52,39 +55,46 @@ namespace Webbshop.Pages
 
         }
 
+     
+
         public void OnPost(int id)
         {
             
 
-            CartManager.AddToCart(id);
 
+           
 
             
             //Search Bar sökningar
-            if (SearchLower == "playstation")
+            if (Search == "playstation")
             {
                 
                 Games = Games.Where(game => game.Platform.Contains("Playstation")).ToList();              
             }
-            else if (SearchLower == "xbox one")
+            else if (Search == "xbox one")
             {
                 
                 Games = Games.Where(game => game.Platform.Contains("Xbox One")).ToList();
                 
             }
-            else if (SearchLower == "electronic arts")
+            else if (Search == "electronic arts")
             {
                 Games = Games.Where(game => game.Studio.Contains("Electronic Arts")).ToList();
 
             }
-            else if (SearchLower == "activision")
+            else if (Search == "activision")
             {
                 Games = Games.Where(game => game.Studio.Contains("Activision")).ToList();
               
             }
-            else if (SearchLower == "wii")
+            else if (Search == "wii")
             {
                 Games = Games.Where(game => game.Platform.Contains("Wii")).ToList();
+
+            }
+            else if (Search == "cod")
+            {
+                Games = Games.Where(game => game.Name.Contains("Call of Duty: Vanguard ")).ToList();
 
             }
         }
