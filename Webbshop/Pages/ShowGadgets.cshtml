@@ -15,20 +15,7 @@
     </button>
 </nav>
 
-
-
-
-@* Search funktion bland Gadgets *@
-<form method="post">
-    <div class="input-group col-3">
-        <input type="text" class="form-control" placeholder="Search" asp-for="Search">
-        <input type="submit" value="Submit" />
-
-    </div>
-</form>
-
-<h3 class="text-center">Different Gadgets for Consoles</h3>
-
+<h3 class="textcenter">Different Gadgets for Consoles</h3>
 
 <div class="dropdown">
     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -46,29 +33,29 @@
 
 @{ int i = 0;}
 @foreach (var gadget in Model.gadgets)
-{
-    <div class="card mx-auto row" style="width: 18rem;">
-        <img class="card-img-top img-thumbnail " src="@gadget.ImageURL" alt="Card image cap">
-        <div class="card-body">
-            <h4 class="card-title ">@gadget.Name</h4>
-            <p>
-                <a class="btn btn-light" data-toggle="collapse" href="#collapseExample_@i"
-                   role="button" aria-expanded="true" aria-controls="collapseExample_@i">
-                    Description
-                </a>
-            </p>
-            <div class="collapse" id="collapseExample_@i">
-                <div class="card card-body">
-                    <p>@gadget.Description</p>
-                    <p>Platforms: @gadget.GadgetPlatform</p>
+    {
+        <div class="card mx-auto row" style="width: 18rem;">
+            <img class="card-img-top img-thumbnail " src="@gadget.ImageURL" alt="Card image cap">
+            <div class="card-body">
+                <h4 class="card-title ">@gadget.Name</h4>
+                <p>
+                    <a class="btn btn-light" data-toggle="collapse" href="#collapseExample_@i"
+                       role="button" aria-expanded="true" aria-controls="collapseExample_@i">
+                        Description
+                    </a>
+                </p>
+                <div class="collapse" id="collapseExample_@i">
+                    <div class="card card-body">
+                        <p>@gadget.Description</p>
+                        <p>Platforms: @gadget.GadgetPlatform</p>
+                    </div>
                 </div>
+                <h6> Quantity: @gadget.Stock </h6>
+                <h6> Article Number: @gadget.Id</h6>
+                <h5> Pris: @gadget.Price Kr</h5>
+                <button type="button">Add to Cart</button>
             </div>
-            <h6> Quantity: @gadget.Stock </h6>
-            <h6> Article Number: @gadget.Id</h6>
-            <h5> Pris: @gadget.Price Kr</h5>
-            <button type="button">Add to Cart</button>
         </div>
-    </div>
     i++;
 }
 

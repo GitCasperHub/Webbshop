@@ -12,9 +12,9 @@ namespace Webbshop.Pages
 {
     public class ShowConsolesModel : PageModel
     {
-
+        
         public List<GameConsole> consoles = ConsoleManager.GetGameConsoles();
-
+        
 
         [BindProperty]
         public string Search { get; set; }
@@ -26,7 +26,7 @@ namespace Webbshop.Pages
 
             consoles = consoles.OrderBy(gameConsole => gameConsole.Name).ToList();
 
-            if (Sort == "Price")
+            if(Sort == "Price")
             {
                 consoles = consoles.OrderBy(gameConsole => gameConsole.Price).ToList();
             }
@@ -41,43 +41,23 @@ namespace Webbshop.Pages
 
 
         }
-       
 
         public void Onpost()
         {
+            string searchWord = Search.ToLower();
 
-            
 
             //Search Bar sökningar
-            if (Search == "playstation")
+            if (searchWord == "playstation")
             {
 
                 consoles = consoles.Where(console => console.Name.Contains("Playstation")).ToList();
 
             }
-            else if (Search == "xbox ")
-            {
-
-                consoles = consoles.Where(console => console.Name.Contains("Xbox")).ToList();
-
-
-            }
-            else if (Search == "nintendo")
-            {
-
-                consoles = consoles.Where(console => console.Name.Contains("Nintendo")).ToList();
-
-
-            }
-            else if (Search == "sony")
-            {
-
-                consoles = consoles.Where(console => console.ConsoleDeveloper.Contains("Sony")).ToList();
-
-
-            }
 
 
         }
+
+       
     }
 }
