@@ -13,15 +13,24 @@ namespace Webbshop.Pages
     public class CartModel : PageModel
     {
 
-        public static List<Product> CartList = CartManager.GetAllProducts();
+        public List<Product> CartList = CartManager.CartList;
+
 
         public void OnGet()
         {
-
+          
             
 
+        }
 
-           
+        public void OnPost(int removeId)
+        {
+
+            CartManager.RemoveFromCart(removeId);
+
+            //CartList = CartList.OrderBy(product => product.Price).ToList();
+
+
         }
 
     }

@@ -46,7 +46,7 @@ namespace Webbshop.Pages
                 Data.GameManager.NewGame(Name, Price, AgeRestriction, Platform, Description, Stock, Genre, ReleaseDate, Studio, CriticScore, ImageURL);
                 addToPendingList  = false;
             }
-            if(mergeLists)
+            if (mergeLists)
             {
                 // Slår ihop pending listan 
                 Data.GameManager.AddNewGameList();

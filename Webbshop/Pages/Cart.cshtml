@@ -6,4 +6,25 @@
 <h1>Din Kundvagn</h1>
 
 
-<h5>@CartModel.CartList</h5>
+
+
+
+<form method="post">
+    @foreach (var product in Model.CartList)
+    {
+
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="@product.ImageURL" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">@product.Name</h5>
+                <p class="card-text">@product.Description</p>
+                <p>Article Number: @product.Id</p>
+                <h5>@product.Price Kr</h5>
+
+
+                <button asp-route-removeId="@product.Id" type="submit">Remove Article</button>
+            </div>
+        </div>
+
+    }
+</form>

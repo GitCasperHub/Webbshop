@@ -1443,3 +1443,4 @@ C:\Users\efrai\Desktop\Skola\WebbshopUppgift\Webbshop\Webbshop\obj\Debug\net5.0\
 C:\Users\efrai\Desktop\Skola\WebbshopUppgift\Webbshop\Webbshop\obj\Debug\net5.0\ref\Webbshop.dll
 C:\Users\efrai\Desktop\Skola\WebbshopUppgift\Webbshop\Webbshop\obj\Debug\net5.0\Webbshop.pdb
 C:\Users\efrai\Desktop\Skola\WebbshopUppgift\Webbshop\Webbshop\obj\Debug\net5.0\Webbshop.genruntimeconfig.cache
+C:\Users\gumsa\OneDrive\Skrivbord\BigProject\Webbshop\Webbshop\obj\Debug\net5.0\Razor\Pages\Cart.cshtml.g.cs
