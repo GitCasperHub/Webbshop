@@ -12,6 +12,8 @@ namespace Webbshop.Pages
     public class SearchProductIdModel : PageModel
     {
         List<Product> allProducts = CartManager.GetAllProducts();
+
+        [BindProperty]
         public string SearchId { get; set; }
         public bool IdMatch { get; set; }
         public string Name { get; set; }

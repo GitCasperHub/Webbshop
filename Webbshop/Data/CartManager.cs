@@ -19,6 +19,8 @@ namespace Webbshop.Data
 
         public static List<Product> GetAllProducts()
         {
+            AllProductsList.Clear();
+
             foreach (Gadget gadget in GadgetManager.GetGadgets())
             {
                 AllProductsList.Add(gadget);
@@ -47,6 +49,7 @@ namespace Webbshop.Data
                 {
                     CartList.Add(allProducts[i]);
                     // 1 CoD - 2 Fifa - 3 StarW
+                    break;
                 }
             }
 
@@ -55,7 +58,7 @@ namespace Webbshop.Data
         public static void RemoveFromCart(string removeId)
         {
 
-            for (int i = CartList.Count - 1; i > 0; i--)
+            for (int i = CartList.Count - 1; i >= 0; i--)
             {
                 if (CartList[i].Id == removeId)
                 {
