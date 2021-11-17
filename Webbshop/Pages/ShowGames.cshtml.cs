@@ -57,6 +57,7 @@ namespace Webbshop.Pages
             
 
             CartManager.AddToCart(id);
+            Games = Games.OrderBy(game => game.Name).ToList();
 
             if (Search != null)
             {

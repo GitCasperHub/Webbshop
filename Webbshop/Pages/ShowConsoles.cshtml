@@ -7,16 +7,16 @@
     <a class="navbar-brand" asp-page="/ShowGames">Games</a>
     <a class="navbar-brand" asp-page="/ShowConsoles">Consoles</a>
     <a class="navbar-brand" asp-page="/ShowGadgets">Gadgets</a>
-    <a class="navbar-brand" asp-page="/AdminAddGame">Admin</a>
     <a class="navbar-brand" asp-page="/Cart">Cart</a>
-    <a class="navbar-brand text-right" asp-page="/AdminAddGame">Admin</a>
+    <a class="navbar-brand navbar-nav ml-auto" asp-page="/AdminAddGame">Admin</a>
+    
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 </nav>
 
 <form method="post">
-    <div class="input-group">
+    <div class="input-group col-3">
         <input type="text" class="form-control" placeholder="Search" asp-for="Search">
         <input type="submit" value="Submit" />
 
@@ -38,36 +38,38 @@
     </div>
 </div>
 
-@{ int i = 0;}
-    @foreach(var gameConsole in Model.consoles)
+<form method="post">
+    @{ int i = 0;}
+    @foreach (var gameConsole in Model.consoles)
     {
-    <div class="card mx-auto row" style="width: 18rem;">
-        <img class="card-img-top img-thumbnail " src="@gameConsole.ImageURL" alt="Card image cap">
-        <div class="card-body">
-            <h4 class="card-title ">@gameConsole.Name</h4>
-            <p>
-                <a class="btn btn-light" data-toggle="collapse" href="#collapseExample_@i"
-                   role="button" aria-expanded="true" aria-controls="collapseExample_@i">
-                    Description
-                </a>
-            </p>
-            <div class="collapse" id="collapseExample_@i">
-                <div class="card card-body">
-                    <p>@gameConsole.Description</p>
-                    <p>Develepor: @gameConsole.ConsoleDeveloper</p>
-                    <p>Release Date: @gameConsole.ConsoleRelease</p>
+        <div class="card mx-auto row" style="width: 18rem;">
+            <img class="card-img-top img-thumbnail " src="@gameConsole.ImageURL" alt="Card image cap">
+            <div class="card-body">
+                <h4 class="card-title ">@gameConsole.Name</h4>
+                <p>
+                    <a class="btn btn-light" data-toggle="collapse" href="#collapseExample_@i"
+                       role="button" aria-expanded="true" aria-controls="collapseExample_@i">
+                        Description
+                    </a>
+                </p>
+                <div class="collapse" id="collapseExample_@i">
+                    <div class="card card-body">
+                        <p>@gameConsole.Description</p>
+                        <p>Develepor: @gameConsole.ConsoleDeveloper</p>
+                        <p>Release Date: @gameConsole.ConsoleRelease</p>
 
+                    </div>
                 </div>
+                <h6> Quantity: @gameConsole.Stock</h6>
+                <h6> Article Number: @gameConsole.Id</h6>
+                <h5> Pris: @gameConsole.Price Kr</h5>
+
+                <button asp-route-id="@gameConsole.Id" type="submit">Add to Cart</button>
             </div>
-            <h6> Quantity: @gameConsole.Stock</h6>
-            <h6> Article Number: @gameConsole.Id</h6>
-            <h5> Pris: @gameConsole.Price Kr</h5>
-            <button type="button">Add to Cart</button>
         </div>
-    </div>
         i++;
     }
-
+</form>
 
 
 

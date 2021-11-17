@@ -42,19 +42,26 @@ namespace Webbshop.Pages
 
         }
 
-        public void Onpost()
+        public void Onpost(string id)
         {
-            string searchWord = Search.ToLower();
+
+            CartManager.AddToCart(id);
+            consoles = consoles.OrderBy(gameConsole => gameConsole.Name).ToList();
 
 
-            //Search Bar sökningar
-            if (searchWord == "playstation")
+            if (Search != null)
             {
 
-                consoles = consoles.Where(console => console.Name.Contains("Playstation")).ToList();
 
+                string searchWord = Search.ToLower();
+                //Search Bar sökningar
+                if (searchWord == "playstation")
+                {
+
+                    consoles = consoles.Where(console => console.Name.Contains("Playstation")).ToList();
+
+                }
             }
-
 
         }
 

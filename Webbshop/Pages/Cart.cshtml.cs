@@ -15,8 +15,11 @@ namespace Webbshop.Pages
 
         public List<Product> CartList = CartManager.CartList;
 
+        [BindProperty]
+        public double TotalPrice { get; set; }
         public void OnGet(string removeId)
         {
+            TotalPrice = CartManager.TotalPrice;
 
             if (removeId != null )
             {

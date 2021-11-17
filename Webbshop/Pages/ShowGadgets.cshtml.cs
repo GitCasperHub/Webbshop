@@ -21,6 +21,8 @@ namespace Webbshop.Pages
         public void OnGet()
         {
 
+
+
             gadgets = gadgets.OrderBy(Gadget => Gadget.Name).ToList();
 
             if (Sort == "Price")
@@ -35,6 +37,14 @@ namespace Webbshop.Pages
             {
                 gadgets = gadgets.OrderByDescending(Gadget => Gadget.Name).ToList();
             }
+
+
+        }
+
+        public void OnPost(string id)
+        {
+            CartManager.AddToCart(id);
+            gadgets = gadgets.OrderBy(Gadget => Gadget.Name).ToList();
 
 
         }
