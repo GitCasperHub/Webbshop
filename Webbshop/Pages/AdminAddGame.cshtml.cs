@@ -18,6 +18,8 @@ namespace Webbshop.Pages
         public bool AddToPendingList { get; set; } = false;
         public bool MergeLists { get; set; } = false;
 
+        public string IdentID { get; set; }
+
         public string Name { get; set; }
         public int Price { get; set; }
         public int AgeRestriction { get; set; }

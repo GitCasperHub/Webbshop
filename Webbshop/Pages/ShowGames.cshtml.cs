@@ -18,7 +18,7 @@ namespace Webbshop.Pages
 
         [BindProperty]
         public string Search { get; set; }
-        public string SearchLower { get; set; }
+        
 
         
         [BindProperty(SupportsGet = true)]
@@ -52,40 +52,46 @@ namespace Webbshop.Pages
 
         }
 
-        public void OnPost(int id)
+        public void OnPost(string id)
         {
             
 
             CartManager.AddToCart(id);
+            Games = Games.OrderBy(game => game.Name).ToList();
+
+            if (Search != null)
+            {
+                string SearchLower = Search.ToLower();
 
 
-            
-            //Search Bar sökningar
-            if (SearchLower == "playstation")
-            {
-                
-                Games = Games.Where(game => game.Platform.Contains("Playstation")).ToList();              
-            }
-            else if (SearchLower == "xbox one")
-            {
-                
-                Games = Games.Where(game => game.Platform.Contains("Xbox One")).ToList();
-                
-            }
-            else if (SearchLower == "electronic arts")
-            {
-                Games = Games.Where(game => game.Studio.Contains("Electronic Arts")).ToList();
 
-            }
-            else if (SearchLower == "activision")
-            {
-                Games = Games.Where(game => game.Studio.Contains("Activision")).ToList();
-              
-            }
-            else if (SearchLower == "wii")
-            {
-                Games = Games.Where(game => game.Platform.Contains("Wii")).ToList();
+                //Search Bar sökningar
+                if (SearchLower == "playstation")
+                {
 
+                    Games = Games.Where(game => game.Platform.Contains("Playstation")).ToList();
+                }
+                else if (SearchLower == "xbox one")
+                {
+
+                    Games = Games.Where(game => game.Platform.Contains("Xbox One")).ToList();
+
+                }
+                else if (SearchLower == "electronic arts")
+                {
+                    Games = Games.Where(game => game.Studio.Contains("Electronic Arts")).ToList();
+
+                }
+                else if (SearchLower == "activision")
+                {
+                    Games = Games.Where(game => game.Studio.Contains("Activision")).ToList();
+
+                }
+                else if (SearchLower == "wii")
+                {
+                    Games = Games.Where(game => game.Platform.Contains("Wii")).ToList();
+
+                }
             }
         }
     }

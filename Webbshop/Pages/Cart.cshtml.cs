@@ -15,22 +15,24 @@ namespace Webbshop.Pages
 
         public List<Product> CartList = CartManager.CartList;
 
-
-        public void OnGet()
+        [BindProperty]
+        public double TotalPrice { get; set; }
+        public void OnGet(string removeId)
         {
-          
-            
+            TotalPrice = CartManager.TotalPrice;
+
+            if (removeId != null )
+            {
+                CartManager.RemoveFromCart(removeId);
+            }
 
         }
 
-        public void OnPost(int removeId)
+        public void OnPost()
         {
 
-            CartManager.RemoveFromCart(removeId);
 
             //CartList = CartList.OrderBy(product => product.Price).ToList();
-
-
         }
 
     }

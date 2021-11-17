@@ -1444,3 +1444,9 @@ C:\Users\efrai\Desktop\Skola\WebbshopUppgift\Webbshop\Webbshop\obj\Debug\net5.0\
 C:\Users\efrai\Desktop\Skola\WebbshopUppgift\Webbshop\Webbshop\obj\Debug\net5.0\Webbshop.pdb
 C:\Users\efrai\Desktop\Skola\WebbshopUppgift\Webbshop\Webbshop\obj\Debug\net5.0\Webbshop.genruntimeconfig.cache
 C:\Users\gumsa\OneDrive\Skrivbord\BigProject\Webbshop\Webbshop\obj\Debug\net5.0\Razor\Pages\Cart.cshtml.g.cs
+C:\Users\efrai\Desktop\Skola\Inlämningsuppgift\Projekt\Webbshop\Webbshop\obj\Debug\net5.0\Razor\Pages\Cart.cshtml.g.cs
+C:\Users\efrai\Desktop\Skola\Inlämningsuppgift\Projekt\Webbshop\Webbshop\obj\Debug\net5.0\Razor\Pages\ShowGadgets.cshtml.g.cs
+C:\Users\efrai\Desktop\Skola\Inlämningsuppgift\Projekt\Webbshop\Webbshop\obj\Debug\net5.0\Razor\Pages\EditProduct.cshtml.g.cs
+C:\Users\efrai\Desktop\Skola\Inlämningsuppgift\Projekt\Webbshop\Webbshop\obj\Debug\net5.0\Razor\Pages\SearchProductId.cshtml.g.cs
+C:\Users\gumsa\OneDrive\Skrivbord\BigProject\Webbshop\Webbshop\obj\Debug\net5.0\Razor\Pages\EditProduct.cshtml.g.cs
+C:\Users\gumsa\OneDrive\Skrivbord\BigProject\Webbshop\Webbshop\obj\Debug\net5.0\Razor\Pages\SearchProductId.cshtml.g.cs

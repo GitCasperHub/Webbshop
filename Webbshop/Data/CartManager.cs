@@ -12,13 +12,15 @@ namespace Webbshop.Data
         public static List<Product> CartList = new List<Product>();
 
         // general
-        public static int TotalPrice { get; set; }
+        public static double TotalPrice { get; set; }
         public static int Moms { get; set; }
         public static int RemoveCart { get; set; }
         public static bool ClearCart { get; set; }
 
         public static List<Product> GetAllProducts()
         {
+            AllProductsList.Clear();
+
             foreach (Gadget gadget in GadgetManager.GetGadgets())
             {
                 AllProductsList.Add(gadget);
@@ -35,52 +37,42 @@ namespace Webbshop.Data
             return AllProductsList;
         }
 
-
-        public static void AddToCart(int id)
+        public static void AddToCart(string id)
         {
             List<Product> allProducts = GetAllProducts();
 
-            
 
-            for (int i = allProducts.Count-1; i > 0; i--)
+            TotalPrice = 0;
+            foreach( var product in CartList)
+            {
+                TotalPrice += product.Price;
+
+            }
+
+
+            for (int i = allProducts.Count - 1; i > 0; i--)
             {
                 if (allProducts[i].Id == id)
                 {
-                    CartList.Add( allProducts[i] );
-                    // 1 CoD - 2 Fifa - 3 StarW
+                    CartList.Add(allProducts[i]);
+                    
+                    break;
                 }
             }
 
 
-
-
-
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-        public static void RemoveFromCart(int removeId)
+        public static void RemoveFromCart(string removeId)
         {
 
-            for (int i = CartList.Count - 1; i > 0; i--)
+            for (int i = CartList.Count - 1; i >= 0; i--)
             {
                 if (CartList[i].Id == removeId)
                 {
+                    TotalPrice -= CartList[i].Price;
                     CartList.Remove(CartList[i]);
                 }
             }
         }
-
-
     }
 }

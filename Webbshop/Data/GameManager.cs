@@ -12,7 +12,11 @@ namespace Webbshop.Data
         public static List<Game> Games { get; set; } = new List<Game>();
         public static List<Game> AddedGames { get; set; } = new List<Game>();
 
-      
+        private static string GenerateGameId()
+        {
+            string id = "GE" + Math.Abs(Guid.NewGuid().GetHashCode());
+            return id;
+        }
 
         public static List<Game> GetGames()
         {
@@ -25,7 +29,7 @@ namespace Webbshop.Data
 
                     new Game()
                     {
-                        Id = Math.Abs(Guid.NewGuid().GetHashCode()),
+                        Id = GenerateGameId(),
                         Name = "FIFA 22 ",
                         Price = 599,
                         AgeRestriction = 13,
@@ -43,7 +47,7 @@ namespace Webbshop.Data
                     },
                      new Game()
                     {
-                        Id = Math.Abs(Guid.NewGuid().GetHashCode()),
+                        Id = GenerateGameId(),
                         Name = "Call of Duty: Vanguard ",
                         Price = 599,
                         AgeRestriction = 13,
@@ -62,7 +66,7 @@ namespace Webbshop.Data
                     },
                       new Game()
                     {
-                        Id = Math.Abs(Guid.NewGuid().GetHashCode()),
+                        Id = GenerateGameId(),
                         Name = "Transformers: The Game ",
                         Price = 199,
                         AgeRestriction = 6,
@@ -81,7 +85,7 @@ namespace Webbshop.Data
                     },
                       new Game()
                       {
-                          Id = Math.Abs(Guid.NewGuid().GetHashCode()),
+                          Id = GenerateGameId(),
                           Name = "Grand Theft Auto V",
                           Price = 100,
                           AgeRestriction = 17,
@@ -100,7 +104,7 @@ namespace Webbshop.Data
                       },
                         new Game()
                       {
-                          Id = Math.Abs(Guid.NewGuid().GetHashCode()),
+                          Id = GenerateGameId(),
                           Name = "Star Wars: Battlefront II Classic",
                           Price = 99,
                           AgeRestriction = 12,
@@ -135,7 +139,7 @@ namespace Webbshop.Data
 
             Game game = new Game(); //Skapar nytt spelobjekt med nedanstående attribut
 
-            game.Id = Guid.NewGuid().GetHashCode();
+            game.Id = GenerateGameId();
             game.Name = name;
             game.Price = price;
             game.AgeRestriction = ageRestriciton;
