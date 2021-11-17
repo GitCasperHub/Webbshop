@@ -17,6 +17,21 @@ namespace Webbshop.Pages
 
         [BindProperty]
         public double TotalPrice { get; set; }
+
+        [BindProperty]
+        public int PostalCode { get; set; }
+
+        [BindProperty]
+        public string Adress { get; set; }
+
+        [BindProperty]
+        public string WholeName { get; set; }
+
+        [BindProperty]
+        public int PhoneNumber { get; set; }
+
+        public int Quantity { get; set; }
+
         public void OnGet(string removeId)
         {
             TotalPrice = CartManager.TotalPrice;
@@ -26,13 +41,13 @@ namespace Webbshop.Pages
                 CartManager.RemoveFromCart(removeId);
             }
 
+            TotalPrice = CartManager.GetPriceSum();
+
         }
 
         public void OnPost()
         {
-
-
-            //CartList = CartList.OrderBy(product => product.Price).ToList();
+           
         }
 
     }

@@ -16,6 +16,11 @@ namespace Webbshop.Data
         public static int Moms { get; set; }
         public static int RemoveCart { get; set; }
         public static bool ClearCart { get; set; }
+        public static double PriceSum { get; set; }
+        public static bool FoundDupe { get; set; }
+        public static int Quantity { get; set; }
+
+
 
         public static List<Product> GetAllProducts()
         {
@@ -37,31 +42,44 @@ namespace Webbshop.Data
             return AllProductsList;
         }
 
-        public static void AddToCart(string id)
+        public static void CheckDupes(string id)
         {
-            List<Product> allProducts = GetAllProducts();
-
-
-            TotalPrice = 0;
-            foreach( var product in CartList)
+            FoundDupe = false;
+            foreach(var product in CartList)
             {
-                TotalPrice += product.Price;
-
-            }
-
-
-            for (int i = allProducts.Count - 1; i > 0; i--)
-            {
-                if (allProducts[i].Id == id)
+                if(product.Id == id)
                 {
-                    CartList.Add(allProducts[i]);
-                    
-                    break;
+                    FoundDupe = true;
                 }
             }
+        }
 
+        public static void AddToCart(string id)
+        {
+            CheckDupes(id);
+
+            List<Product> allProducts = GetAllProducts();
+
+            if (FoundDupe)
+            {
+                Quantity++;
+            }
+            else
+            {
+
+                for (int i = allProducts.Count - 1; i > 0; i--)
+                {
+                        if (allProducts[i].Id == id)
+                        {
+                            CartList.Add(allProducts[i]);
+                            break;
+                        }
+                }
+
+            }
 
         }
+
         public static void RemoveFromCart(string removeId)
         {
 
@@ -69,10 +87,27 @@ namespace Webbshop.Data
             {
                 if (CartList[i].Id == removeId)
                 {
-                    TotalPrice -= CartList[i].Price;
+                   
                     CartList.Remove(CartList[i]);
                 }
             }
         }
+
+
+        public static double GetPriceSum()
+        {
+            PriceSum = 0;
+            foreach(var product in CartList)
+            {
+                PriceSum += product.Price;
+            }
+
+            return PriceSum;
+
+        }
+        
+
+
+
     }
 }

@@ -1,30 +1,64 @@
 ﻿@page
 @model Webbshop.Pages.CartModel
-@{     
+@{
 }
 
 <h1>Din Kundvagn</h1>
-<h4>Total Price: </h4>
-
+<div class="my-3">
+    <h4>Total Price: @Model.TotalPrice Kr</h4>
+</div>
 
 
 
 <form method="post">
-    @foreach (var product in Model.CartList)
-    {
+    @{ int i = 0;}
+    <h4>Products Currently in Cart</h4>
+    <div class="row">
+        @foreach (var product in Model.CartList)
+        {
 
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="@product.ImageURL" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">@product.Name</h5>
-                <p class="card-text">@product.Description</p>
-                <p>Article Number: @product.Id</p>
-                <h5>@product.Price Kr</h5>
-
-
-                <a class="btn btn-danger" asp-route-removeId="@product.Id" >Remove Article</a>
-            </div>
-        </div>
-
-    }
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="@product.ImageURL" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">@product.Name</h5>
+                    <a class="btn btn-light" data-toggle="collapse" href="#collapseExample_@i"
+                       role="button" aria-expanded="true" aria-controls="collapseExample_@i">
+                        Description
+                    </a>
+                    <div class="collapse" id="collapseExample_@i">
+                        <p class="card-text">@product.Description</p>
+                        <p>Article Number: @product.Id</p>                        
+                    </div>
+                    <h5>@product.Price Kr</h5>
+                    <input class="btn" asp-for="@Model.Quantity"type="number"/>
+                    <a class="btn btn-danger" asp-route-removeId="@product.Id">Remove Article</a>
+                </div>
+                </div>
+            i++;
+        }        
+    </div>
 </form>
+
+
+
+@* Två knappar, vanlig frakt och express. Lyser runt den man tryckt på *@
+<div class="my-3">
+    <h5>Select shipping method </h5>
+    <button type="button" class="btn btn-outline-primary">Regular Shipping: Free Shipping</button>
+    <button type="button" class="btn btn-outline-primary">Express shipping: 199kr</button>
+</div>
+
+<div class="my-3">
+    <h5>Shipping Details</h5>
+    <div>
+        <input type="text" asp-for="@Model.WholeName" placeholder="Full Name" />
+    </div>
+    <div>
+        <input type="text" asp-for="@Model.PostalCode" placeholder="Postal Code" />
+
+        <input type="text" asp-for="@Model.Adress" placeholder="Adress" />
+    </div>
+    <div>
+        <input type="text" asp-for="@Model.PhoneNumber" placeholder="Phonenumber" />
+    </div>
+</div>
